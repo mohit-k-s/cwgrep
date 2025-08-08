@@ -3,7 +3,7 @@
 A tool for searching AWS CloudWatch logs with grep-like syntax
 
 ## Why Not Just Use CloudWatch?
-> Because cli >>>> \
+> Because cli >>>> 
 
 `cwgrep` is grep-like and built for devs who just want logs.
 
