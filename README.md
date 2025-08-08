@@ -1,6 +1,12 @@
 # CloudWatch Logs Grep Tool (cwgrep)
 
-A fast, interactive tool for searching AWS CloudWatch logs with grep-like syntax. Because you never know if your log aggregator be dropping logs silently.
+A tool for searching AWS CloudWatch logs with grep-like syntax
+
+## Why Not Just Use CloudWatch?
+Because cli >>>> 
+`cwgrep` is grep-like and built for devs who just want logs.
+
+Also sometimes your third party log collector can be dropping the logs silently, without any warnings.
 
 ## Demo
 [![Watch the demo](https://img.youtube.com/vi/CrjnFnXXM0Q/hqdefault.jpg)](https://www.youtube.com/watch?v=CrjnFnXXM0Q)
