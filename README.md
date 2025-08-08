@@ -1,6 +1,6 @@
 # CloudWatch Logs Grep Tool (cwgrep)
 
-A fast, interactive tool for searching AWS CloudWatch logs with grep-like syntax. Perfect for incident response when you need reliable access to logs, especially when other log aggregators like New Relic drop logs.
+A fast, interactive tool for searching AWS CloudWatch logs with grep-like syntax. Because you never know if your log aggregator be dropping logs silently.
 
 ## Demo
 [![Watch the demo](https://img.youtube.com/vi/CrjnFnXXM0Q/hqdefault.jpg)](https://www.youtube.com/watch?v=CrjnFnXXM0Q)
