@@ -23,6 +23,8 @@ from botocore.exceptions import ClientError, NoCredentialsError
 
 console = Console()
 
+default_region='ap-southeast-2'
+
 class AWSMethodRouter:
     """Router/Spy system for AWS API calls that intercepts and logs all method calls."""
     
@@ -196,7 +198,7 @@ class CloudWatchGrep:
             
             # Use local credentials strategy - check multiple sources
             self.session = self._create_session()
-            raw_client = self.session.client('logs' , region_name= 'ap-southeast-2')
+            raw_client = self.session.client('logs' , region_name= default_region)
             
             # Create the AWS method router/spy
             self.logs_client = AWSMethodRouter(raw_client, self.aws_logger)
@@ -1247,6 +1249,7 @@ class CloudWatchGrep:
             console.print(f"[red]❌ Search error: {e}[/red]")
 
 @click.command()
+@click.option('--region' ,type=str, help="The region where your logs should be looked at, default ap-southeast-2" )
 @click.option('--debug', is_flag=True, help='Enable detailed AWS API call debugging')
 @click.option('--log-group', '-g', help='Log group name to search (e.g., /aws/lambda/my-function)')
 @click.option('--pattern', '-p', help='Search pattern (regex or literal string)')
@@ -1254,7 +1257,7 @@ class CloudWatchGrep:
 @click.option('--start-time', '-s', help='Start time (e.g., "2024-01-15 14:30" or "yesterday 2pm")')
 @click.option('--end-time', '-e', help='End time (e.g., "2024-01-15 16:00" or "now")')
 @click.option('--limit', '-l', type=int, default=100, help='Maximum number of matches to return (default: 100)')
-def main(debug, log_group, pattern, hours, start_time, end_time, limit):
+def main(region, debug, log_group, pattern, hours, start_time, end_time, limit):
     """CloudWatch Logs Grep Tool - Interactive log searching for AWS CloudWatch.
     
     Examples:
@@ -1270,6 +1273,10 @@ def main(debug, log_group, pattern, hours, start_time, end_time, limit):
       # Direct search - custom time range
       cwgrep.py -g /aws/lambda/api -p "ERROR" -s "2024-01-15 14:00" -e "2024-01-15 16:00"
     """
+    if region :
+        global default_region
+        console.print("Selected region ", region)
+        default_region = region
     try:
         app = CloudWatchGrep(debug_mode=debug)
         

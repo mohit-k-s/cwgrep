@@ -33,11 +33,13 @@ chmod +x cwgrep.py
 - AWS credentials configured (via `aws configure` or environment variables)
 - Appropriate CloudWatch Logs permissions
 
+
 ## Usage
 
 ### Interactive Mode
 
 ```bash
+export AWS_PROFILE=whatever_your_profile_name
 # Start the interactive tool
 python cwgrep.py
 
