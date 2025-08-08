@@ -2,20 +2,9 @@
 
 A fast, interactive tool for searching AWS CloudWatch logs with grep-like syntax. Perfect for incident response when you need reliable access to logs, especially when other log aggregators like New Relic drop logs.
 
-## Features
+## Demo
+[![Watch the demo](https://img.youtube.com/vi/CrjnFnXXM0Q/hqdefault.jpg)](https://www.youtube.com/watch?v=CrjnFnXXM0Q)
 
-- 🚀 **Fast Interactive Interface** Shows top 5 log groups, click to select
-- 📝 **Custom Log Group Input** Enter any log group name manually with validation
-- 🔍 **Natural Grep Syntax** No awkward escaping like other tools
-- ⏰ **Smart Time Filtering** Respects CloudWatch log retention policies
-- 📅 **Absolute Time Ranges** Enter precise start/end dates and times
-- 📄 **Paginated Results** Interactive pagination, user controls when to continue
-- 🛡️ **Retention Awareness** Prevents searches beyond log expiry dates
-- 💾 **Memory Efficient** Streams logs without loading everything into memory
-- 🔄 **Reliable Backup** Direct CloudWatch access when other tools fail
-- 🔧 **AWS API Monitoring** Real-time logging of all AWS API calls with timing
-- 🐛 **Debug Mode** Detailed AWS API call tracing for troubleshooting
-- ⚡ **Performance Metrics** Shows search timing and processing rates
 
 ## Installation
 
