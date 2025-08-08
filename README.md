@@ -82,6 +82,7 @@ python cwgrep.py -g /aws/apigateway/logs -p "timeout" \
 - `-e, --end-time`: Custom end time (e.g., "2024-01-15 16:00", "now")
 - `-l, --limit`: Maximum matches to return (default: 100)
 - `--debug`: Enable detailed AWS API call debugging
+- `-r`,`--region`: The aws region
 
 ### Interactive Workflow
 

@@ -1249,7 +1249,7 @@ class CloudWatchGrep:
             console.print(f"[red]❌ Search error: {e}[/red]")
 
 @click.command()
-@click.option('--region' ,type=str, help="The region where your logs should be looked at, default ap-southeast-2" )
+@click.option('--region', '-r' ,type=str, help="The region where your logs should be looked at, default ap-southeast-2" )
 @click.option('--debug', is_flag=True, help='Enable detailed AWS API call debugging')
 @click.option('--log-group', '-g', help='Log group name to search (e.g., /aws/lambda/my-function)')
 @click.option('--pattern', '-p', help='Search pattern (regex or literal string)')
